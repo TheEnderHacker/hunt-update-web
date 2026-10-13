@@ -65,6 +65,72 @@
     }
   }
 
+
+  // Fixed published dates are safe to compare with the Berlin calendar. They are
+  // NOT live server checks and must never change the state of community unlocks.
+  const fixedReleases = [
+    {date:'2026-09-08', label:'Chapter 1 · Burgess', detail:'Blood Testament & Update 2.9', href:'#release-sept8'},
+    {date:'2026-10-05', label:'Update 2.9.1', detail:'Cursed Kin & Profil-Avatare', href:'#release-oct5'},
+    {date:'2026-10-06', label:'Chapter 2 · Flame Rifle', detail:'Inferno & Firefighter Supply', href:'#release-oct6'},
+    {date:'2026-10-07', label:'Bound in Blood DLC', detail:'Kosmetische DLC-Inhalte', href:'#release-oct7'},
+    {date:'2026-10-13', label:'All Hallows’ Cleave', detail:'Event- und Gegner-Start; KEIN automatischer Stage-5-Unlock', href:'#release-oct13'},
+    {date:'2026-10-26', label:'Twitch Drops starten', detail:'26.10.–09.11.; genaue Uhrzeit nicht bestätigt', href:'#release-oct26'},
+    {date:'2026-11-09', label:'Twitch Drops: letzter Kalendertag', detail:'Keine fest bestätigte Enduhrzeit', href:'#release-nov9'}
+  ];
+  function shortDate(dayKey) {
+    return new Intl.DateTimeFormat('de-DE',{day:'2-digit',month:'2-digit', timeZone:timezone})
+      .format(new Date(`${dayKey}T12:00:00Z`));
+  }
+  function renderReleaseRows(targetId, entries, currentDay) {
+    const target = $(targetId);
+    if (!target) return;
+    target.replaceChildren();
+    for (const entry of entries) {
+      const li = document.createElement('li');
+      const date = document.createElement('span');
+      date.className = 'quick-release-date';
+      date.textContent = shortDate(entry.date);
+      const body = document.createElement('div');
+      body.className = 'quick-release-text';
+      const title = document.createElement('strong');
+      const link = document.createElement('a');
+      link.href = entry.href;
+      link.textContent = entry.label + ' ↗';
+      title.append(link);
+      const detail = document.createElement('small');
+      detail.textContent = entry.detail;
+      const badge = document.createElement('span');
+      badge.className = 'quick-release-pill' + (entry.date === currentDay ? ' today' : '');
+      badge.textContent = entry.date < currentDay ? 'TERMIN VORBEI' : entry.date === currentDay ? 'HEUTE · UHRZEIT OFFEN' : 'NOCH GEPLANT';
+      body.append(title, detail, badge);
+      li.append(date, body);
+      target.append(li);
+    }
+    if (!entries.length) {
+      const placeholder = document.createElement('li');
+      placeholder.className = 'quick-empty';
+      placeholder.textContent = targetId === 'release-done' ? 'Noch keine vergangenen Veröffentlichungstage.' : 'Kein weiterer fester Termin angekündigt. Community-Stufen können trotzdem freischalten.';
+      target.append(placeholder);
+    }
+  }
+  function renderQuickDashboard(today, now) {
+    $('status-asof').textContent = new Intl.DateTimeFormat('de-DE', {
+      timeZone: timezone, day:'numeric',month:'long',year:'numeric'
+    }).format(now);
+    const past = fixedReleases.filter(r => r.date < today && r.date !== '2026-11-09');
+    const todayOrFuture = fixedReleases.filter(r => r.date >= today).slice(0, 3);
+    // End date is not an actual new content release; do not count it as released content.
+    $('release-done-count').textContent = String(past.length);
+    renderReleaseRows('release-done', past, today);
+    renderReleaseRows('release-next', todayOrFuture, today);
+    document.querySelectorAll('[data-release-status]').forEach(badge => {
+      const published = badge.dataset.releaseStatus;
+      badge.textContent = published < today ? `✓ DATUM ERREICHT · SEIT ${shortDate(published)}` :
+        published === today ? `◷ HEUTE ANGEKÜNDIGT · UHRZEIT OFFEN` :
+        `◷ ANGEKÜNDIGT FÜR ${shortDate(published)}`;
+    });
+  }
+
   // Germany changed to winter time on 25 Oct 2026. These are *date boundaries*,
   // explicitly NOT an assertion about when Twitch flips the real campaigns live.
   const twitchCalendarStart = Date.parse('2026-10-25T23:00:00Z'); // Oct 26 00:00 MEZ
@@ -100,6 +166,7 @@
     if (today !== state.dateKey) {
       state.dateKey = today;
       redrawEventStatus(today);
+      renderQuickDashboard(today, now);
     }
     countdown(now);
   }

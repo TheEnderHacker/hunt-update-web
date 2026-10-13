@@ -6,6 +6,7 @@
 
 - **Blutmond-Design** in Schwarz, tiefem Rot und verwaschenem Gold, mit eigens generierter Hero-Illustration und mehreren selbst gezeichneten SVG-Grafiken.
 - **Deutsche Live-Uhr (Europe/Berlin)** samt automatischer Sommer-/Winterzeit und grünem **HEUTE**-Indikator auf dem jeweiligen Release-Datum.
+- **Schnellantwort ganz oben:** „Was ist schon da?“ und „Wann kommen Waffen & Tarotkarten?“ mit getrennten Statuslisten, Datums- und Live-Sicherheitshinweisen.
 - **Chronologische Timeline** vom 8. September bis 9. November, Filter, Navigation zum aktuellen Datum und aufklappbare Detailinfos.
 - **Erklärungen** zu den Ereignissen, Gegnern, betroffenen Kartenorten und dem Unterschied zwischen festen Release-Daten und Community-Freischaltungen.
 - **Fünf Community-Stufen** mit Belohnungen und Punktegrenzen, mit klarer Abgrenzung zwischen offiziellen Crytek-Daten und Community-Spiel-Daten.
@@ -31,11 +32,11 @@ docker compose up -d --build
 
 ## Dokploy (Docker Compose)
 
-1. In Dokploy ein **Compose-Projekt** aus dem GitHub-Repository `TheEnderHacker/hunt-update-web` erstellen, Branch `main`, Compose-Pfad `compose.yaml`.
+1. In Dokploy ein **Compose-Projekt** aus dem GitHub-Repository `TheEnderHacker/hunt-update-web` erstellen, Branch `main`, Compose-Pfad `./docker-compose.yml` (Dokploy-Standard).
 2. **Deploy / Build** ausführen. Der Compose-Service heißt **`web`**, der **interne Container-Port ist `8080`**.
 3. In Dokploy unter **Domains** die gewünschte Domain dem Service `web` und **Port `8080`** zuordnen. HTTPS über die in Dokploy gewählte Domain-Konfiguration bereitstellen.
 4. Optional: GitHub-Auto-Deploy/Webhook in Dokploy aktivieren. Bei jedem neuen Commit kann dann ein Rebuild gestartet werden.
-5. Der lokale Port `127.0.0.1:8085` ist nur für direkten Host-Zugriff. Die Domain-Routing-Funktion von Dokploy verwendet das interne Service-Netz. Falls dein Setup Bindings anders benötigt, passe `HUNT_WEB_BIND` an.
+5. Der optionale Host-Port ist standardmäßig **nur an `127.0.0.1:8085` gebunden**; er ist nicht öffentlich. Für den Zugriff über deine Domain verwende in Dokploy das interne Ziel `web:8080` und die von Dokploy verwaltete Verbindung. Falls deine Dokploy-Installation Compose-Domains anders anbindet, deren Netzwerk- und Domain-Einstellungen prüfen.
 
 Wichtig: **Nicht** den externen Port `8085` als internen Zielport für die Dokploy-Domain verwenden. Der Dienst lauscht innerhalb des Containers auf `8080`.
 
@@ -45,10 +46,11 @@ Wichtig: **Nicht** den externen Port `8085` als internen Zielport für die Dokpl
 |---|---|
 | `index.html` | barrierearme Seiteninhalte, Release-Fakten und Quellen |
 | `styles.css` | responsive Blood-Moon-Optik |
-| `app.js` | Zeit/Datum, Countdown, Filter, Mobile-Menü |
+| `app.js` | Schnellstatus (nach Berliner Datum), Live-Uhr, Countdown, Filter, Mobile-Menü |
 | `assets/hero.webp` | eigens generiertes Hintergrundmotiv |
 | `assets/*.svg` | eigens erstellte Symbol-Illustrationen |
-| `Dockerfile`, `compose.yaml`, `nginx.conf` | Nginx-Container für Dokploy |
+| `Dockerfile`, `compose.yaml`, `docker-compose.yml`, `nginx.conf` | Nginx-Container für Dokploy |
+| `compose.local.yaml` | optionale lokale Override-Datei (nicht für Dokploy nötig) |
 | `SOURCES.md` | Datengrundlagen / Einschränkungen |
 | `PROJECT_STATUS.md` | Projektstand und Übergabe |
 

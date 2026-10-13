@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="500" viewBox="0 0 360 500" role="img" aria-label="Illustrative Tarotkarte THE ATLAS">
+ <rect width="360" height="500" rx="20" fill="#0f1013"/>
+ <rect x="16" y="17" width="328" height="466" rx="12" fill="none" stroke="#bcaa81" stroke-width="3"/><rect x="27" y="29" width="306" height="442" rx="9" fill="none" stroke="#bcaa81" opacity=".35"/>
+ <g fill="#bcaa81"><path d="M180 54l7 16 17 7-17 7-7 16-7-16-17-7 17-7Z"/><circle cx="58" cy="80" r="3"/><circle cx="302" cy="80" r="3"/><circle cx="58" cy="413" r="3"/><circle cx="302" cy="413" r="3"/></g>
+ <g color="#bcaa81"><circle cx="180" cy="247" r="94" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="180" cy="247" r="54" fill="none" stroke="currentColor"/><path d="M180 137V358M70 247H290M104 170L256 324M104 324L256 170" stroke="currentColor" stroke-width="2"/><path d="M180 158L197 247 180 335 164 247Z" fill="currentColor"/><circle cx="180" cy="247" r="17" fill="#0b0d10" stroke="currentColor" stroke-width="4"/></g><path d="M53 392H307" stroke="#bcaa81" opacity=".5"/>
+ <text x="180" y="120" fill="#bcaa81" text-anchor="middle" font-family="serif" font-size="22">I</text>
+ <text x="180" y="439" fill="#bcaa81" text-anchor="middle" letter-spacing="3" font-family="Georgia,serif" font-size="19">THE ATLAS</text></svg>

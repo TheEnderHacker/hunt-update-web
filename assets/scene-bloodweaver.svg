@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="500" viewBox="0 0 760 500" role="img" aria-label="Symbolillustration eines spinnenartigen Hunt-Monsters">
+ <defs><radialGradient id="gl"><stop stop-color="#450d10"/><stop offset="1" stop-color="#220e12"/></radialGradient><linearGradient id="body" x2="0.2" y2="1"><stop stop-color="#d34337"/><stop offset="1" stop-color="#100b0a"/></linearGradient></defs>
+ <rect width="760" height="500" fill="url(#gl)"/>
+ <g stroke="#d34337" opacity=".18" stroke-width="1.2" fill="none"><path d="M0 90Q350 330 760 80M0 170Q370 390 760 168M0 270Q390 440 760 270M80 0Q220 250 120 500M305 0Q350 260 320 500M610 0Q520 250 640 500"/></g>
+ <g fill="#070909" stroke="#d34337" stroke-width="16" stroke-linejoin="round" stroke-linecap="round" opacity=".94">
+ <path d="M325 225Q224 180 196 103L119 89L75 46"/><path d="M340 256Q198 268 152 190L61 226L25 202"/><path d="M344 303Q232 347 201 427L112 452L71 490"/><path d="M426 225Q534 165 561 102L647 86L704 43"/><path d="M422 264Q551 275 603 188L682 220L739 201"/><path d="M411 311Q524 367 564 434L652 449L699 490"/></g>
+ <g stroke="#09090a" stroke-width="10"><ellipse cx="383" cy="299" rx="116" ry="103" fill="url(#body)"/><ellipse cx="381" cy="220" rx="76" ry="63" fill="url(#body)"/></g>
+ <g fill="#d34337" opacity=".8"><path d="M333 198L317 142 350 175 367 136 385 169 413 138 417 175 448 149 429 199Z"/><path d="M299 260L276 239 293 290 264 315 313 312 331 360 343 312 393 343 407 313 456 350 448 299 496 283 451 257Z"/></g>
+ <g fill="#d64a3e"><circle cx="357" cy="214" r="11"/><circle cx="406" cy="214" r="11"/><circle cx="368" cy="281" r="7"/><circle cx="409" cy="306" r="5"/><circle cx="354" cy="330" r="5"/></g>
+ <g fill="#d64a3e" opacity=".55"><circle cx="145" cy="384" r="19"/><circle cx="648" cy="380" r="24"/><circle cx="574" cy="435" r="11"/><circle cx="231" cy="446" r="9"/></g>
+ <g fill="#faf2d6" opacity=".08"><circle cx="358" cy="216" r="36"/><circle cx="409" cy="214" r="30"/></g></svg>

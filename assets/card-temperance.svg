@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="500" viewBox="0 0 360 500" role="img" aria-label="Illustrative Tarotkarte TEMPERANCE">
+ <rect width="360" height="500" rx="20" fill="#0f1013"/>
+ <rect x="16" y="17" width="328" height="466" rx="12" fill="none" stroke="#c26053" stroke-width="3"/><rect x="27" y="29" width="306" height="442" rx="9" fill="none" stroke="#c26053" opacity=".35"/>
+ <g fill="#c26053"><path d="M180 54l7 16 17 7-17 7-7 16-7-16-17-7 17-7Z"/><circle cx="58" cy="80" r="3"/><circle cx="302" cy="80" r="3"/><circle cx="58" cy="413" r="3"/><circle cx="302" cy="413" r="3"/></g>
+ <g color="#c26053"><path d="M180 141V355M105 203H255" stroke="currentColor" stroke-width="4"/><path d="M106 208L64 289H149Z M254 208L212 289H298Z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M84 278h49M232 278h49" stroke="currentColor" stroke-width="5"/><path d="M157 350H205M145 360H216" stroke="currentColor" stroke-width="4"/><circle cx="180" cy="176" r="24" stroke="currentColor" fill="none"/><path d="M180 225v85" stroke="currentColor" stroke-width="3"/></g><path d="M53 392H307" stroke="#c26053" opacity=".5"/>
+ <text x="180" y="120" fill="#c26053" text-anchor="middle" font-family="serif" font-size="22">XIV</text>
+ <text x="180" y="439" fill="#c26053" text-anchor="middle" letter-spacing="3" font-family="Georgia,serif" font-size="19">TEMPERANCE</text></svg>

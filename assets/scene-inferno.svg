@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="490" viewBox="0 0 840 490" role="img" aria-label="Künstlerische Illustration: Inferno über einer verlassenen Landschaft">
+<defs><linearGradient id="s" x2="0" y2="1"><stop stop-color="#2a0b0d"/><stop offset=".68" stop-color="#3d1b14"/><stop offset="1" stop-color="#0c0908"/></linearGradient><radialGradient id="g"><stop stop-color="#ffad4b" stop-opacity=".82"/><stop offset="1" stop-color="#bc200f" stop-opacity="0"/></radialGradient></defs>
+<rect width="840" height="490" fill="url(#s)"/><ellipse cx="510" cy="360" rx="430" ry="235" fill="url(#g)"/>
+<g fill="#a63017" opacity=".8"><path d="M0 420Q22 360 40 418Q60 300 88 390Q112 250 139 410Q170 317 183 400Q206 270 241 418Q278 319 297 406Q329 282 353 419Q401 294 427 416Q468 258 500 430Q548 306 561 419Q608 290 637 420Q675 326 697 408Q739 260 773 410Q812 323 840 420V490H0Z"/></g>
+<g fill="#f37b32" opacity=".48"><path d="M65 443Q94 399 87 352Q118 395 109 445Z M212 444Q242 394 232 335Q280 388 260 444Z M462 438Q502 377 495 310Q538 382 515 440Z M676 440Q701 395 709 331Q742 400 729 440Z"/></g>
+<g fill="#09090a"><path d="M0 438Q162 411 288 440T575 437T840 435V490H0Z"/><path d="M70 444L66 166 56 115 66 134 71 81 76 144 91 121 75 180 83 445Z M151 455L148 183 138 139 150 158 153 104 157 150 175 136 158 192 166 455Z M593 447L588 201 577 165 591 184 601 108 602 192 624 160 602 221 607 447Z M768 443L765 201 752 163 766 180 771 109 777 188 799 157 778 223 787 443Z"/>
+<path d="M314 436V276L362 247 410 278V436Z M318 284L362 213 406 285 M345 436V346Q363 326 380 346V436Z"/></g>
+<g stroke="#f3a566" stroke-width="2" opacity=".42"><path d="M340 289H389M350 311H374"/><path d="M42 315l8-20m92-31 12-18m412 50 8-20m181-17 8-29"/></g>
+<g fill="#e6aa82" opacity=".7"><circle cx="121" cy="145" r="1.5"/><circle cx="270" cy="225" r="2.5"/><circle cx="519" cy="110" r="1.5"/><circle cx="721" cy="282" r="2.5"/></g></svg>

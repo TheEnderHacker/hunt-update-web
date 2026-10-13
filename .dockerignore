@@ -1,0 +1,8 @@
+.git
+.github
+*.zip
+*.md
+*.b64
+make_art.py
+__pycache__
+tests
